@@ -7,7 +7,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Expensza | Personal Finance Tracker",
-  description: "Your personal finance tracker",
+  description: "Your personal finance tracker and advisor in one app. Track your expenses, manage your budget, and get personalized financial advice. Start your journey to financial freedom today!. We help you manage your finances effectively and provide personalized advice to help you achieve your financial goals.",
 };
 
 export default function RootLayout({ children }) {

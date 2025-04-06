@@ -3,8 +3,10 @@ import OpenAI from "openai";
 
 // Initialize the OpenAI client
 const openai = new OpenAI({
+  baseURL: "https://models.inference.ai.azure.com",
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
+
 });
 
 // Function to fetch user-specific data (mocked for this example)
@@ -23,7 +25,10 @@ const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
 
     // Send the prompt to the OpenAI API
     const chatCompletion = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
+      temperature: 1,
+      max_tokens: 4096,
+      top_p: 1,
       messages: [{ role: "user", content: userPrompt }],
     });
 
